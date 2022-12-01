@@ -3,7 +3,7 @@
 [MemoryDiagnoser(true)]
 public class Day1Benchmarks
 {
-    // [Benchmark]
+    [Benchmark]
     public void GetHighestCalories() => Day1.GetHighestCalories();
 
     [Benchmark]
