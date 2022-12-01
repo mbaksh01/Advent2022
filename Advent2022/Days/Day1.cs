@@ -1,5 +1,9 @@
 ﻿namespace Advent2022.Days;
 
+/// <summary>
+/// Answer Pt 1 - 66306
+/// Answer Pt 2 - 195292
+/// </summary>
 internal static class Day1
 {
     public static (int first, int second, int third) GetElfWithMostCalories()
@@ -15,30 +19,27 @@ internal static class Day1
 
         foreach (string combinedWeight in elves)
         {
-            foreach (string weight in combinedWeight.Split("\r\n"))
+            if (int.TryParse(combinedWeight, out int result))
             {
-                if (!string.IsNullOrWhiteSpace(combinedWeight))
-                {
-                    weightAsInt += int.Parse(combinedWeight);
-                }
-                else
-                {
-                    if (weightAsInt > highest)
-                    {
-                        highest = weightAsInt;
-                    }
-                    else if (weightAsInt > s_highest)
-                    {
-                        s_highest = weightAsInt;
-                    }
-                    else if (weightAsInt > t_highest)
-                    {
-                        t_highest = weightAsInt;
-                    }
+                weightAsInt += result;
 
-                    weightAsInt = 0;
-                }
+                continue;
             }
+            
+            if (weightAsInt > highest)
+            {
+                highest = weightAsInt;
+            }
+            else if (weightAsInt > s_highest)
+            {
+                s_highest = weightAsInt;
+            }
+            else if (weightAsInt > t_highest)
+            {
+                t_highest = weightAsInt;
+            }
+
+            weightAsInt = 0;
         }
 
         return (highest, s_highest, t_highest);
