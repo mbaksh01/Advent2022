@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="Assets\Day1_Input.txt" />
 	<InternalsVisibleTo Include="$(AssemblyName).Tests.Unit" />
+    <InternalsVisibleTo Include="$(AssemblyName).Benchmarks" />
   </ItemGroup>
 
   <ItemGroup>
