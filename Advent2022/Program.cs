@@ -8,4 +8,5 @@
 Console.WriteLine($"Day 2 part 1 result - {Day2.GetTotalScore()}");
 Console.WriteLine($"Day 2 part 2 result - {Day2.GetTotalScore2()}");
 
-Console.WriteLine($"Day 3 result - {Day3.GetPrioritySum()}");
+Console.WriteLine($"Day 3 part 1 result - {Day3.GetPrioritySum()}");
+Console.WriteLine($"Day 3 part 2 result - {Day3.GetGroupedPrioritySum()}");
