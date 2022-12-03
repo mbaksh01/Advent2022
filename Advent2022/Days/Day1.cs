@@ -4,7 +4,7 @@ internal static class Day1
 {
     public static (int first, int second, int third) GetTopThreeCalories()
     {
-        string input = File.ReadAllText("./Assets/Day1_Input.txt");
+        string input = Helpers.GetInput(1);
 
         string[] elves = input.Split("\r\n");
 
@@ -43,7 +43,7 @@ internal static class Day1
 
     public static int GetHighestCalories()
     {
-        string input = File.ReadAllText("./Assets/Day1_Input.txt");
+        string input = Helpers.GetInput(1);
 
         string[] elves = input.Split("\r\n");
 
