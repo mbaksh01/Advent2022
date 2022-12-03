@@ -1,7 +1,15 @@
 ﻿namespace Advent2022.Days;
 
+/// <summary>
+/// Day 1 challenges.
+/// </summary>
 internal static class Day1
 {
+    /// <summary>
+    /// Takes the input for day 1 and gets the top three
+    /// calories from all the elves.
+    /// </summary>
+    /// <returns>The highest, second highest and third highest calories.</returns>
     public static (int first, int second, int third) GetTopThreeCalories()
     {
         string input = Helpers.GetInput(1);
@@ -41,6 +49,11 @@ internal static class Day1
         return (highest, s_highest, t_highest);
     }
 
+    /// <summary>
+    /// Takes the input for day 1 and finds the 
+    /// highest calories a elf has.
+    /// </summary>
+    /// <returns>The largest calorie count.</returns>
     public static int GetHighestCalories()
     {
         string input = Helpers.GetInput(1);
