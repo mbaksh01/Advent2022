@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using Advent2022.Extensions;
+using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 namespace Advent2022.Days;
@@ -66,11 +67,9 @@ internal class Day3
     {
         string input = Helpers.GetInput(3);
 
-        string[] rucksacks = input.Split("\n");
-
         int prioritySum = 0;
 
-        foreach (string rucksack in rucksacks)
+        foreach (ReadOnlySpan<char> rucksack in input.SplitLines())
         {
             prioritySum += GetPriority(rucksack);
         }
