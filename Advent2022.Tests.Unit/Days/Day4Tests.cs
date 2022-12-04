@@ -7,6 +7,8 @@ public class Day4Tests
     {
         _ = Day4.ParseRange("2-5").Should().Be(new Range(2, 5));
         _ = Day4.ParseRange("6-6").Should().Be(new Range(6, 6));
+        _ = Day4.ParseRange("45-51").Should().Be(new Range(45, 51));
+        _ = Day4.ParseRange("12-89").Should().Be(new Range(12, 89));
     }
 
     [Fact]
