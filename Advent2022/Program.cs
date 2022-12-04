@@ -10,3 +10,6 @@ Console.WriteLine($"Day 2 part 2 result - {Day2.GetTotalScore2()}");
 
 Console.WriteLine($"Day 3 part 1 result - {Day3.GetPrioritySum()}");
 Console.WriteLine($"Day 3 part 2 result - {Day3.GetGroupedPrioritySum()}");
+
+Console.WriteLine($"Day 4 part 1 result - {Day4.GetContainedPairsCount()}");
+Console.WriteLine($"Day 4 part 2 result - {Day4.GetOverlappingPairsCount()}");

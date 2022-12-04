@@ -11,6 +11,10 @@
     <None Remove="Assets\Day1_Input.txt" />
     <None Remove="Assets\Day2_Input.txt" />
     <None Remove="Assets\Day3_Input.txt" />
+    <None Remove="Assets\Day4_Input.txt" />
+    <Content Include="Assets\Day4_Input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
 	<InternalsVisibleTo Include="$(AssemblyName).Tests.Unit" />
     <InternalsVisibleTo Include="$(AssemblyName).Benchmarks" />
   </ItemGroup>
