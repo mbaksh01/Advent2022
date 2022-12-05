@@ -4,6 +4,42 @@ internal class Day5
 {
     internal static Dictionary<int, List<char>> _stacks = new();
 
+    public static string GetCrateOrder(int craneNumber)
+    {
+        string input = Helpers.GetInput(5);
+
+        string[] rows = input.Split("\r\n");
+
+        int rowPosition = ParseStacks(rows);
+
+        if (craneNumber == 9000)
+        {
+            for (int i = rowPosition; i < rows.Length; i++)
+            {
+                string[] command = rows[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                MoveCrates9000(
+                    int.Parse(command[3]),
+                    int.Parse(command[5]),
+                    int.Parse(command[1]));
+            }
+        }
+        else
+        {
+            for (int i = rowPosition; i < rows.Length; i++)
+            {
+                string[] command = rows[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+                MoveCrates9001(
+                    int.Parse(command[3]),
+                    int.Parse(command[5]),
+                    int.Parse(command[1]));
+            }
+        }
+
+        return GetTopCrates();
+    }
+
     internal static void LoadStacks(string[] crates)
     {
         foreach (string row in crates)
@@ -65,12 +101,8 @@ internal class Day5
         }
     }
 
-    public static string GetCrateOrder9000()
+    internal static int ParseStacks(string[] rows)
     {
-        string input = Helpers.GetInput(5);
-
-        string[] rows = input.Split("\r\n");
-
         List<string> currentCrates = new();
 
         int rowPosition = 1;
@@ -89,60 +121,11 @@ internal class Day5
 
         LoadStacks(currentCrates.ToArray());
 
-        for (int i = rowPosition; i < rows.Length; i++)
-        {
-            string[] command = rows[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
-
-            MoveCrates9000(
-                int.Parse(command[3]),
-                int.Parse(command[5]),
-                int.Parse(command[1]));
-        }
-
-        string output = string.Empty;
-
-        foreach (int key in _stacks.Keys)
-        {
-            output += _stacks[key].Last();
-        }
-
-        return output;
+        return rowPosition;
     }
 
-    public static string GetCrateOrder9001()
+    internal static string GetTopCrates()
     {
-        string input = Helpers.GetInput(5);
-
-        string[] rows = input.Split("\r\n");
-
-        List<string> currentCrates = new();
-
-        int rowPosition = 1;
-
-        foreach (string row in rows)
-        {
-            if (int.TryParse(row[1].ToString(), out _))
-            {
-                rowPosition++;
-                break;
-            }
-
-            currentCrates.Add(row);
-            rowPosition++;
-        }
-
-        LoadStacks(currentCrates.ToArray());
-
-        for (int i = rowPosition; i < rows.Length; i++)
-        {
-            string[] command = rows[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
-
-            MoveCrates9001(
-                int.Parse(command[3]),
-                int.Parse(command[5]),
-                int.Parse(command[1]));
-        }
-
         string output = string.Empty;
 
         foreach (int key in _stacks.Keys)
