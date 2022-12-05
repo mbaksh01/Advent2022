@@ -49,7 +49,7 @@ internal class Day5
 
             _stacks[toStack].Add(crate);
 
-            _stacks[fromStack].Remove(_stacks[fromStack].Count - 1);
+            _stacks[fromStack].RemoveAt(_stacks[fromStack].Count - 1);
         }
     }
 
