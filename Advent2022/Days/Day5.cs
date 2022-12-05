@@ -1,10 +1,23 @@
 ﻿namespace Advent2022.Days;
 
+/// <summary>
+/// Day 5 challenges.
+/// </summary>
 internal class Day5
 {
+    /// <summary>
+    /// Dictionary containing stack numbers and their crates.
+    /// </summary>
     internal static Dictionary<int, List<char>> _stacks = new();
 
-    public static string GetCrateOrder(int craneNumber)
+    /// <summary>
+    /// Takes the input of day 5 and executes all the actions
+    /// to find the final state of the crates. Then returns the
+    /// top crates from all of the stacks as a string.
+    /// </summary>
+    /// <param name="craneModel">Model number of crane.</param>
+    /// <returns>String of all the top crates.</returns>
+    public static string GetCrateOrder(int craneModel)
     {
         string input = Helpers.GetInput(5);
 
@@ -12,7 +25,7 @@ internal class Day5
 
         int rowPosition = ParseStacks(rows);
 
-        if (craneNumber == 9000)
+        if (craneModel == 9000)
         {
             for (int i = rowPosition; i < rows.Length; i++)
             {
@@ -40,6 +53,11 @@ internal class Day5
         return GetTopCrates();
     }
 
+    /// <summary>
+    /// Takes a list of crate rows and parses them into
+    /// the <see cref="_stacks"/> dictionary.
+    /// </summary>
+    /// <param name="crates">List of creates to parse.</param>
     internal static void LoadStacks(string[] crates)
     {
         foreach (string row in crates)
@@ -77,6 +95,12 @@ internal class Day5
         }
     }
 
+    /// <summary>
+    /// Reorders the crates using the 
+    /// </summary>
+    /// <param name="fromStack"></param>
+    /// <param name="toStack"></param>
+    /// <param name="count"></param>
     internal static void MoveCrates9000(int fromStack, int toStack, int count)
     {
         for (int i = 0; i < count; i++)
