@@ -13,10 +13,14 @@
     <None Remove="Assets\Day3_Input.txt" />
     <None Remove="Assets\Day4_Input.txt" />
     <None Remove="Assets\Day5_Input.txt" />
+    <None Remove="Assets\Day6_Input.txt" />
     <Content Include="Assets\Day4_Input.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Day5_Input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Day6_Input.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
 	<InternalsVisibleTo Include="$(AssemblyName).Tests.Unit" />
