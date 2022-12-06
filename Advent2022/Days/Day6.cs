@@ -59,10 +59,7 @@ internal class Day6
                 // If it exists, remove the character and all characters before it.
                 int keyIndex = dataStreamCharacters.IndexOf(c);
 
-                for (int i_ = keyIndex; i_ >= 0; i_--)
-                {
-                    dataStreamCharacters.RemoveAt(i_);
-                }
+                dataStreamCharacters.RemoveRange(0, keyIndex + 1);
             }
 
             // Add character.
