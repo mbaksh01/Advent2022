@@ -21,3 +21,8 @@ Code adent project for 2022.
 ## Day 5
 
 ![image](https://user-images.githubusercontent.com/88824667/205642425-fc641141-d6be-4f08-8ddc-0b827932d240.png)
+
+## Day 6
+
+![image](https://user-images.githubusercontent.com/88824667/205869527-236860ba-2b53-4d2d-a1a2-c09a0e82d539.png)
+
