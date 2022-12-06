@@ -8,10 +8,17 @@ internal class Day6
     {
         string input = Helpers.GetInput(6);
 
-        return GetStartOfPackatMarker(input);
+        return IdentifyUniqueSection(input, 4);
     }
 
-    internal static int GetStartOfPackatMarker(ReadOnlySpan<char> dataStream)
+    public static int GetStartOfMessageMarker()
+    {
+        string input = Helpers.GetInput(6);
+
+        return IdentifyUniqueSection(input, 14);
+    }
+
+    internal static int IdentifyUniqueSection(ReadOnlySpan<char> dataStream, int sectionLength)
     {
         List<char> dataStreamCharacters = new();
 
@@ -30,8 +37,8 @@ internal class Day6
             }
 
             dataStreamCharacters.Add(c);
-            
-            if (dataStreamCharacters.Count == 4)
+
+            if (dataStreamCharacters.Count == sectionLength)
             {
                 return i + 1;
             }
