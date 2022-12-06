@@ -16,3 +16,5 @@ Console.WriteLine($"Day 4 part 2 result - {Day4.GetOverlappingPairsCount()}");
 
 Console.WriteLine($"Day 5 part 1 result - {Day5.GetCrateOrder(9000)}");
 Console.WriteLine($"Day 5 part 1 result - {Day5.GetCrateOrder(9001)}");
+
+Console.WriteLine($"Day 6 part 1 result - {Day6.GetStartOfPackatMarker()}");

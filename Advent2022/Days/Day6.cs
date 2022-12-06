@@ -1,4 +1,6 @@
-﻿namespace Advent2022.Days;
+﻿using System.Diagnostics;
+
+namespace Advent2022.Days;
 
 internal class Day6
 {
@@ -11,6 +13,30 @@ internal class Day6
 
     internal static int GetStartOfPackatMarker(ReadOnlySpan<char> dataStream)
     {
-        return 0;
+        List<char> dataStreamCharacters = new();
+
+        for (int i = 0; i < dataStream.Length; i++)
+        {
+            char c = dataStream[i];
+
+            if (dataStreamCharacters.Contains(c))
+            {
+                int keyIndex = dataStreamCharacters.IndexOf(c);
+
+                for (int i_ = keyIndex; i_ >= 0; i_--)
+                {
+                    dataStreamCharacters.RemoveAt(i_);
+                }
+            }
+
+            dataStreamCharacters.Add(c);
+            
+            if (dataStreamCharacters.Count == 4)
+            {
+                return i + 1;
+            }
+        }
+
+        throw new UnreachableException("The given input was not expected to reach this line.");
     }
 }
